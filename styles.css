@@ -1,0 +1,32 @@
+.image-container {
+    /* overflow: hidden; */
+    position: relative;
+    width: 100vw;
+}
+
+.image {
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    width: 110%;
+}
+
+.image-container h1 {
+    color: white;
+    font-size: 14rem;
+    position: absolute;
+    margin: 13% auto;
+    text-align: center;
+    width: 100%;
+}
+
+.hold {
+    height: 500px;
+    padding: 50px;
+}
+
+.clear {
+    height: 100vh;
+}

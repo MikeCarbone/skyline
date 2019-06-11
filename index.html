@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Test</title>
+  <link rel="stylesheet" href="styles.css" type="text/css">
+  </head>
+  <body>
+    <div class="image-container">
+        <img class="image" src="./img/v02/9.png" />
+        <!-- <img id="city9" class="image" src="./img/9.png" /> -->
+        <img id="city8" class="image" src="./img/v02/8.png" />
+        <img id="city7" class="image" src="./img/v02/7.png" />
+        <img id="city6" class="image" src="./img/v02/6.png" />
+        <h1>HotTub</h1>
+        <img id="city5" class="image" src="./img/v02/5.png" />
+        <img id="city4" class="image" src="./img/v02/4.png" />
+        <img id="city3" class="image" src="./img/v02/3.png" />
+        <img id="city2" class="image" src="./img/v02/2.png" />
+        <img id="city1" class="image" src="./img/v02/1.png" />
+    </div>
+    <div class="clear"></div>
+    <div class="hold" style="background-color: red;">
+        <p>Hmmm</p>
+    </div>
+
+    <script>
+        window.addEventListener('mousemove', function(e){move(e)});
+        window.addEventListener('scroll', function(e){move2(e)});
+        function move2 (e){
+            let change2 = -(window.scrollY / 2);
+            var clientHeight = document.body.clientHeight;
+
+            document.getElementsByClassName("image-container")[0].style.webkitTransform = `translateY(-${change2 * 7}px)`;
+        
+            document.getElementById('city1').style.webkitTransform = `translateY(${change2 * 5.5}px)`;
+            document.getElementById('city2').style.webkitTransform = `translateY(${change2 * 5}px)`;
+            document.getElementById('city3').style.webkitTransform = `translateY(${change2 * 4.5}px)`;
+            document.getElementById('city4').style.webkitTransform = `translateY(${change2 * 4}px)`;
+            document.getElementById('city5').style.webkitTransform = `translateY(${change2 * 3}px)`;
+            document.getElementById('city6').style.webkitTransform = `translateY(${change2 * 2}px)`;
+            document.getElementById('city7').style.webkitTransform = `translateY(${change2 * 1}px)`;
+            document.getElementById('city8').style.webkitTransform = `translateY(${change2 * .5}px)`;
+        }
+        function move(e){
+            var width = window.innerWidth;
+            let change;
+
+            if (e.clientX > window.innerWidth / 2){
+                // Moving right
+                change = -(e.clientX - (window.innerWidth / 2));
+            } else {
+                // Moving left
+                change = (window.innerWidth / 2) - e.clientX;
+            }
+            
+            change = change / 70;
+            
+            var height = window.innerHeight;
+            var clientHeight = document.body.clientHeight;
+            var skew = {}
+            skew.y = (1.5 * ((e.x / width) - 0.5));
+            skew.x = -(1.5 * ((e.y / height) - 0.5));
+
+
+
+            let change2 = -(window.scrollY / 2);
+
+            document.getElementById('city1').style.webkitTransform = `translateX(${change * 10}px) translateY(${change2 * 7}px)`;
+            document.getElementById('city2').style.webkitTransform = `translateX(${change * 9}px) translateY(${change2 * 6}px)`;
+            document.getElementById('city3').style.webkitTransform = `translateX(${change * 8}px) translateY(${change2 * 5}px)`;
+            document.getElementById('city4').style.webkitTransform = `translateX(${change * 7}px) translateY(${change2 * 4}px)`;
+            document.getElementById('city5').style.webkitTransform = `translateX(${change * 6}px) translateY(${change2 * 3}px)`;
+            document.getElementById('city6').style.webkitTransform = `translateX(${change * 5}px) translateY(${change2 * 2}px)`;
+            document.getElementById('city7').style.webkitTransform = `translateX(${change * 4}px) translateY(${change2 * 1}px)`;
+            document.getElementById('city8').style.webkitTransform = `translateX(${change * 3}px) translateY(${change2 * 0}px)`;
+        }
+
+        // window.addEventListener("mousemove",function(e) {
+        //     var width = window.innerWidth;
+        //     let change;
+
+        //     if (e.clientX > window.innerWidth / 2){
+        //         // Moving right
+        //         change = -(e.clientX - (window.innerWidth / 2));
+        //     } else {
+        //         // Moving left
+        //         change = (window.innerWidth / 2) - e.clientX;
+        //     }
+            
+        //     change = change / 70;
+            
+        //     var height = window.innerHeight;
+        //     var clientHeight = document.body.clientHeight;
+        //     var skew = {}
+        //     skew.y = (1.5 * ((e.x / width) - 0.5));
+        //     skew.x = -(1.5 * ((e.y / height) - 0.5));
+
+            // document.body.style.webkitTransform = "scale(1.01) perspective("+clientHeight+"px) rotateX("+skew.x+"deg) rotateY("+skew.y+"deg)";
+            
+            // document.getElementById('city1').style.webkitTransform = "scale(1) perspective("+clientHeight+"px) rotateX("+(-skew.x*30)+"deg) rotateY("+(-skew.y*10) +"deg)";
+            // document.getElementById('city2').style.webkitTransform = "scale(1) perspective("+clientHeight+"px) rotateX("+(-skew.x*40)+"deg) rotateY("+(-skew.y*15) +"deg)";
+            // document.getElementById('city3').style.webkitTransform = "scale(1) perspective("+clientHeight+"px) rotateX("+(-skew.x*50)+"deg) rotateY("+(-skew.y *20) +"deg)";
+            // document.getElementById('city4').style.webkitTransform = "scale(1) perspective("+clientHeight+"px) rotateX("+(-skew.x*60)+"deg) rotateY("+(-skew.y* 25) +"deg)";
+            // document.getElementById('city5').style.webkitTransform = "scale(1) perspective("+clientHeight+"px) rotateX("+(-skew.x*70)+"deg) rotateY("+(-skew.y* 30) +"deg)";
+            // document.getElementById('city6').style.webkitTransform = "scale(1) perspective("+clientHeight+"px) rotateX("+(-skew.x*30)+"deg) rotateY("+(-skew.y* 20) +"deg)";
+            // document.getElementById('city7').style.webkitTransform = "scale(1) perspective("+clientHeight+"px) rotateX("+(-skew.x*90)+"deg) rotateY("+(-skew.y* 40) +"deg)";
+            // document.getElementById('city8').style.webkitTransform = "scale(1) perspective("+clientHeight+"px) rotateX("+(-skew.x*100)+"deg) rotateY("+(-skew.y* 45) +"deg)";
+            // document.getElementById('city9').style.webkitTransform = "scale(1) perspective("+clientHeight+"px) rotateX("+(-skew.x*110)+"deg) rotateY("+(-skew.y* 50) +"deg)";
+
+            // document.getElementById('city1').style.webkitTransform = `translateX(${change * 10}px) perspective(${clientHeight}px)`;
+            // document.getElementById('city2').style.webkitTransform = `translateX(${change * 9}px) perspective(${clientHeight}px)`;
+            // document.getElementById('city3').style.webkitTransform = `translateX(${change * 8}px) perspective(${clientHeight}px)`;
+            // document.getElementById('city4').style.webkitTransform = `translateX(${change * 7}px) perspective(${clientHeight}px)`;
+            // document.getElementById('city5').style.webkitTransform = `translateX(${change * 6}px) perspective(${clientHeight}px)`;
+            // document.getElementById('city6').style.webkitTransform = `translateX(${change * 5}px) perspective(${clientHeight}px)`;
+            // document.getElementById('city7').style.webkitTransform = `translateX(${change * 4}px) perspective(${clientHeight}px)`;
+            // document.getElementById('city8').style.webkitTransform = `translateX(${change * 3}px) perspective(${clientHeight}px)`;
+        // });
+
+        // window.addEventListener('scroll', e => {
+        //     e.preventDefault();
+        //     var clientHeight = document.body.clientHeight;
+        //     let change = -(window.scrollY / 2);
+
+        //     document.getElementById('city1').style.webkitTransform = `translateY(${change * 7}px) perspective(${clientHeight}px)`;
+        //     document.getElementById('city2').style.webkitTransform = `translateY(${change * 6}px) perspective(${clientHeight}px)`;
+        //     document.getElementById('city3').style.webkitTransform = `translateY(${change * 5}px) perspective(${clientHeight}px)`;
+        //     document.getElementById('city4').style.webkitTransform = `translateY(${change * 4}px) perspective(${clientHeight}px)`;
+        //     document.getElementById('city5').style.webkitTransform = `translateY(${change * 3}px) perspective(${clientHeight}px)`;
+        //     document.getElementById('city6').style.webkitTransform = `translateY(${change * 2}px) perspective(${clientHeight}px)`;
+        //     document.getElementById('city7').style.webkitTransform = `translateY(${change * 1}px) perspective(${clientHeight}px)`;
+        //     document.getElementById('city8').style.webkitTransform = `translateY(${change * 0.5}px) perspective(${clientHeight}px)`;
+        // });
+</script>
+  </body>
+</html>
