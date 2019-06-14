@@ -17,7 +17,7 @@
     color: white;
     font-size: 14rem;
     position: absolute;
-    margin: 13% auto;
+    margin: 0 auto;
     text-align: center;
     width: 100%;
 }
@@ -29,4 +29,23 @@
 
 .clear {
     height: 100vh;
+}
+
+.image-front {
+    border-bottom: 2px solid red;
+    display: block;
+}
+
+#city1{
+    top: 130px;
+}
+
+#city2 {
+    top: 110px;
+}
+#city3 {
+    top: 90px;
+}
+#city4 {
+    top: 70px;
 }
