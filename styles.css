@@ -17,14 +17,21 @@
     color: white;
     font-size: 14rem;
     position: absolute;
-    margin: 0 auto;
+    margin: 100px auto 0 auto;
     text-align: center;
     width: 100%;
 }
 
 .hold {
+    background-color: #0a73db;
     height: 500px;
     padding: 50px;
+}
+
+.hold h1 {
+    font-size: 5rem;
+    color: white;
+    text-align: center;
 }
 
 .clear {

@@ -13,8 +13,8 @@
         <!-- <img id="city9" class="image" src="./img/9.png" /> -->
         <img id="city8" class="image" src="./img/v02/8.png" />
         <img id="city7" class="image" src="./img/v02/7.png" />
+        <h1>HotTub</h1>
         <img id="city6" class="image" src="./img/v02/6.png" />
-        <!-- <h1>HotTub</h1> -->
         <img id="city5" class="image" src="./img/v02/5.png" />
         <img id="city4" class="image" src="./img/v02/4.png" />
         <img id="city3" class="image" src="./img/v02/3.png" />
@@ -22,8 +22,13 @@
         <img id="city1" class="image image-front" src="./img/v02/1.png" />
     </div>
     <div class="clear"></div>
-    <div class="hold" style="background-color: red;">
-        <p>Hmmm</p>
+    <div id="content-container">
+        <div class="hold" style="">
+            <h1>A new kind of bla bla</h1>
+        </div>
+        <div class="hold" style="background-color: blue;">
+                <p>Hmmm</p>
+            </div>
     </div>
 
     <script>
@@ -69,6 +74,7 @@
         }
 
         function render () {
+            document.getElementById('content-container').style.webkitTransform = `translateY(${(buildingState.changeY * 7) + 233}px)`;
             document.getElementById('city1').style.webkitTransform = `translateX(${buildingState.changeX * 10}px) translateY(${buildingState.changeY * 7}px)`;
             document.getElementById('city2').style.webkitTransform = `translateX(${buildingState.changeX * 9}px) translateY(${buildingState.changeY * 6}px)`;
             document.getElementById('city3').style.webkitTransform = `translateX(${buildingState.changeX * 8}px) translateY(${buildingState.changeY * 5}px)`;
