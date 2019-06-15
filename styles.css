@@ -7,11 +7,14 @@
 
 .image-container {
     display: flex;
-    /* overflow: hidden; */
+    overflow: hidden;
     position: relative;
     justify-content: center;
-    min-width: 105vw;
+    overflow: hidden;
+    min-width: 100vw;
     height: 100vh;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 .image {
@@ -22,7 +25,7 @@
     object-position: center;
     position: absolute;
     overflow: hidden;
-    min-width: 110%;
+    min-width: 100%;
 }
 
 .image-container h1 {
