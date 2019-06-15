@@ -13,15 +13,14 @@
         <!-- <img id="city9" class="image" src="./img/9.png" /> -->
         <img id="city8" class="image" src="./img/v02/8.png" />
         <img id="city7" class="image" src="./img/v02/7.png" />
-        <h1>HotTub</h1>
         <img id="city6" class="image" src="./img/v02/6.png" />
+        <!-- <h1>HotTub</h1> -->
         <img id="city5" class="image" src="./img/v02/5.png" />
         <img id="city4" class="image" src="./img/v02/4.png" />
         <img id="city3" class="image" src="./img/v02/3.png" />
         <img id="city2" class="image" src="./img/v02/2.png" />
         <img id="city1" class="image image-front" src="./img/v02/1.png" />
     </div>
-    <div class="clear"></div>
     <div id="content-container">
         <div class="hold" style="">
             <h1>A new kind of bla bla</h1>
@@ -42,8 +41,11 @@
             changeY: 0
         }
 
+        window.addEventListener('gesturechange', function(e) {moveY(e)});
+        window.addEventListener('touchmove', function(e){moveY(e)});
         window.addEventListener('scroll', function(e){moveY(e)});
         function moveY (e){
+            console.log(window.pageYOffset);
             let change2 = -(window.scrollY / 2);
             
             // Save current state in history state for animation
@@ -74,15 +76,15 @@
         }
 
         function render () {
-            document.getElementById('content-container').style.webkitTransform = `translateY(${(buildingState.changeY * 7) + 233}px)`;
-            document.getElementById('city1').style.webkitTransform = `translateX(${buildingState.changeX * 10}px) translateY(${buildingState.changeY * 7}px)`;
-            document.getElementById('city2').style.webkitTransform = `translateX(${buildingState.changeX * 9}px) translateY(${buildingState.changeY * 6}px)`;
-            document.getElementById('city3').style.webkitTransform = `translateX(${buildingState.changeX * 8}px) translateY(${buildingState.changeY * 5}px)`;
-            document.getElementById('city4').style.webkitTransform = `translateX(${buildingState.changeX * 7}px) translateY(${buildingState.changeY * 4}px)`;
-            document.getElementById('city5').style.webkitTransform = `translateX(${buildingState.changeX * 6}px) translateY(${buildingState.changeY * 3}px)`;
-            document.getElementById('city6').style.webkitTransform = `translateX(${buildingState.changeX * 5}px) translateY(${buildingState.changeY * 2}px)`;
-            document.getElementById('city7').style.webkitTransform = `translateX(${buildingState.changeX * 4}px) translateY(${buildingState.changeY * 1}px)`;
-            document.getElementById('city8').style.webkitTransform = `translateX(${buildingState.changeX}px) translateY(${buildingState.changeY * 0}px)`;
+            document.getElementById('content-container').style.transform = `translateY(${(buildingState.changeY * 7)}px)`;
+            document.getElementById('city1').style.transform = `translateX(${buildingState.changeX * 10}px) translateY(${buildingState.changeY * 7}px)`;
+            document.getElementById('city2').style.transform = `translateX(${buildingState.changeX * 9}px) translateY(${buildingState.changeY * 6}px)`;
+            document.getElementById('city3').style.transform = `translateX(${buildingState.changeX * 8}px) translateY(${buildingState.changeY * 5}px)`;
+            document.getElementById('city4').style.transform = `translateX(${buildingState.changeX * 7}px) translateY(${buildingState.changeY * 4}px)`;
+            document.getElementById('city5').style.transform = `translateX(${buildingState.changeX * 6}px) translateY(${buildingState.changeY * 3}px)`;
+            document.getElementById('city6').style.transform = `translateX(${buildingState.changeX * 5}px) translateY(${buildingState.changeY * 2}px)`;
+            document.getElementById('city7').style.transform = `translateX(${buildingState.changeX * 4}px) translateY(${buildingState.changeY * 1}px)`;
+            document.getElementById('city8').style.transform = `translateX(${buildingState.changeX}px) translateY(${buildingState.changeY * 0}px)`;
         }
 </script>
   </body>

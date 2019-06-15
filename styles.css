@@ -1,23 +1,35 @@
+* {
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .image-container {
+    display: flex;
     /* overflow: hidden; */
     position: relative;
-    width: 100vw;
+    justify-content: center;
+    min-width: 105vw;
+    height: 100vh;
 }
 
 .image {
+    height: 100vh;
     top: 0;
     left: 0;
     object-fit: cover;
     object-position: center;
     position: absolute;
-    width: 110%;
+    overflow: hidden;
+    min-width: 110%;
 }
 
 .image-container h1 {
     color: white;
     font-size: 14rem;
     position: absolute;
-    margin: 100px auto 0 auto;
+    margin: 150px auto 0 auto;
     text-align: center;
     width: 100%;
 }
@@ -43,7 +55,7 @@
     display: block;
 }
 
-#city1{
+/* #city1{
     top: 130px;
 }
 
@@ -55,4 +67,4 @@
 }
 #city4 {
     top: 70px;
-}
+} */
