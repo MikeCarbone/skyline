@@ -13,8 +13,6 @@
     overflow: hidden;
     min-width: 100vw;
     height: 100vh;
-    margin-left: 50%;
-    transform: translateX(-50%);
 }
 
 .image {
@@ -22,7 +20,7 @@
     top: 0;
     left: 0;
     object-fit: cover;
-    object-position: center;
+    object-position: 50% 50%;
     position: absolute;
     overflow: hidden;
     min-width: 100%;
@@ -56,6 +54,18 @@
 .image-front {
     border-bottom: 2px solid red;
     display: block;
+}
+
+@media (max-width: 500px) {
+    .image-mobile {
+        transform: translateX(-50%);
+        left: 50%;
+    }
+    /* .image-container {
+        position: initial;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    } */
 }
 
 /* #city1{
