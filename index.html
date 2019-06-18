@@ -2,27 +2,27 @@
 <html>
   <head>
     <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Test</title>
-  <link rel="stylesheet" href="styles.css" type="text/css">
+    <link rel="stylesheet" href="styles.css" type="text/css">
   </head>
   <body>
     <div class="image-container">
-        <img id="sky" class="image image-mobile" src="./img/v02/9.png" />
+        <img id="sky" class="parallax-image image-mobile" src="./img/v02/9.png" />
         <!-- <img id="city9" class="image" src="./img/9.png" /> -->
-        <img id="city8" class="image image-mobile" src="./img/v02/8.png" />
-        <img id="city7" class="image image-mobile" src="./img/v02/7.png" />
-        <img id="city6" class="image image-mobile" src="./img/v02/6.png" />
+        <img id="city8" class="parallax-image image-mobile" src="./img/v02/8.png" />
+        <img id="city7" class="parallax-image image-mobile" src="./img/v02/7.png" />
+        <img id="city6" class="parallax-image image-mobile" src="./img/v02/6.png" />
         <!-- <h1>HotTub</h1> -->
-        <img id="city5" class="image image-mobile" src="./img/v02/5.png" />
-        <img id="city4" class="image image-mobile" src="./img/v02/4.png" />
-        <img id="city3" class="image image-mobile" src="./img/v02/3.png" />
-        <img id="city2" class="image image-mobile" src="./img/v02/2.png" />
-        <img id="city1" class="image image-front image-mobile" src="./img/v02/1.png" />
+        <img id="city5" class="parallax-image image-mobile" src="./img/v02/5.png" />
+        <img id="city4" class="parallax-image image-mobile" src="./img/v02/4.png" />
+        <img id="city3" class="parallax-image image-mobile" src="./img/v02/3.png" />
+        <img id="city2" class="parallax-image image-mobile" src="./img/v02/2.png" />
+        <img id="city1" class="parallax-image image-front image-mobile" src="./img/v02/1.png" />
     </div>
     <div id="content-container">
-        <div class="hold" style="">
+        <div class="hold">
             <h1>A new kind of bla bla</h1>
         </div>
         <div class="hold" style="background-color: blue;">
@@ -38,6 +38,9 @@
 
         let centerAdjustment = 0;
 
+        const images = document.getElementsByClassName('image-mobile');
+        const contentContainer = document.getElementById('content-container');
+
         mobileAdjust();
         window.addEventListener('resize', mobileAdjust);
         window.addEventListener('gesturechange', function(e) {moveY(e)});
@@ -49,7 +52,6 @@
             if (window.innerWidth < 550){
                 centerAdjustment = -(window.innerWidth);
             } else {
-                const images = document.getElementsByClassName('image-mobile');
                 Array.from(images).forEach(element => {
                     element.classList.remove('image-mobile');
                 });
@@ -60,8 +62,11 @@
         };
         
         function moveY (e){
-            let change2 = -(window.scrollY / 2);
-            buildingState.changeY = change2;
+            const distanceToTop = contentContainer.getBoundingClientRect().top;
+            if (distanceToTop > 0) {
+                const change2 = -(window.scrollY / 2);
+                buildingState.changeY = change2;
+            }
 
             render();
         }
